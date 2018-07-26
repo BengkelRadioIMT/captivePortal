@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>BengkRad WiFi Auth</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+	  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="icon" type="image/png" href="favicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="#">Bengkrad WiFi Auth</a>
+			</header>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Terima Kasih telah Menggunakan WiFi Kami</h2>
+						<p>Silahkan login terlebih dahulu :</p>
+            <div class="content">
+              <div class="row">
+                <div class="col-4 col-12-small">
+              </div>
+              <div class="col-4 col-12-small">
+                <form method="POST" action="/login?{{ orig_url }}">
+                  USERNAME<br>
+                  <div class="xsmall">
+                      <input type="text" name="login">
+                  </div>
+                  <br>
+                  PASSWORD<br>
+                  <div class="xsmall">
+                    <input type="password" name="password">
+                  </div>
+                  <br><br>
+                  <input type="submit" value="LOGIN">
+                </form>
+            </div>
+            </div>
+					</header>
+			</section>
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	</body>
+</html>
