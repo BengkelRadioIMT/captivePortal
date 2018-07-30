@@ -1,14 +1,16 @@
 #!/bin/bash
 
+cd /home/pi/captivePortal
+
 #Remove old firewall
-iptables -F
-iptables -X
+sudo iptables -F
+sudo iptables -X
 
-iptables -t nat -F
-iptables -t nat -X
+sudo iptables -t nat -F
+sudo iptables -t nat -X
 
-iptables -t mangle -F
-iptables -t mangle -X
+sudo iptables -t mangle -F
+sudo iptables -t mangle -X
 
 #Config new firewall
 IPTABLES=/sbin/iptables
@@ -25,4 +27,4 @@ $IPTABLES -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 $IPTABLES -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 #Start Python script
-python server.py
+sudo python server.py
