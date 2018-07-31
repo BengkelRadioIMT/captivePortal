@@ -1,0 +1,27 @@
+{
+    "1": {
+        "IP": "192.168.5.136", 
+        "MAC": "", 
+        "isConnect": 1, 
+        "timeStart": 1533030542.828181
+    }, 
+    "2": {
+        "IP": "", 
+        "MAC": "", 
+        "isConnect": 0, 
+        "timeStart": ""
+    }, 
+    "3": {
+        "IP": "", 
+        "MAC": "", 
+        "isConnect": 0, 
+        "timeStart": ""
+    }, 
+    "4": {
+        "IP": "", 
+        "MAC": "", 
+        "isConnect": 0, 
+        "timeStart": ""
+    }, 
+    "connCount": 1
+}

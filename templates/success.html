@@ -23,26 +23,25 @@
 						<img src="../static/image/bengkradPNG.png" alt="Logo" height="125" width="125">
 						<br>
 						<br>
-						<h2>Terima Kasih telah Menggunakan WiFi Kami</h2>
-						<p>Silahkan login terlebih dahulu :</p>
+						<h2>YOU'VE LOGGED IN</h2>
+						IP Address :
+						<label for="ip" id="IP"></label>
+						<script>
+							var IP = '{{ip}}';
+							document.getElementById('IP').innerHTML = IP;
+						</script>
+						Time :
+						<label for="time" id="time"></label><br />
+						<script>
+							var time = '{{timeS}}';
+							document.getElementById('time').innerHTML = time;
+						</script>
             <div class="content">
               <div class="row">
                 <div class="col-4 col-12-small">
               </div>
               <div class="col-4 col-12-small">
-                <form method="POST" action="/login?{{ orig_url }}">
-                  USERNAME<br>
-                  <div class="xsmall">
-                      <input type="text" name="login">
-                  </div>
-                  <br>
-                  PASSWORD<br>
-                  <div class="xsmall">
-                    <input type="password" name="password">
-                  </div>
-                  <br><br>
-                  <input type="submit" value="LOGIN">
-                </form>
+									<a href="/logout" class="button">LOGOUT</a>
             </div>
             </div>
 					</header>
