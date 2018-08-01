@@ -36,13 +36,19 @@ def logout_user(ip):
         i = i + 1
         j = str(i)
         if (request.remote_addr == conn[j]['IP']):
-            conn[j]['isConnect'] = 0
-            conn[j]['IP'] = ''
-            conn[j]['timeStart'] = ''
+            if (i<4):
+                for x in range(i,4):
+                    y = str(x)
+                    z = str(x+1)
+                    conn[y]['isConnect'] = conn[z]['isConnect']
+                    conn[y]['IP'] = conn[z]['IP']
+                    conn[y]['timeStart'] = conn[z]['timeStart']
+            conn['4']['isConnect'] = 0
+            conn['4']['IP'] = ''
+            conn['4']['timeStart'] = 0
             os.system("sudo iptables -D internet " + j + " -t mangle")
             conn['connCount'] = conn['connCount'] - 1
             isFound = 1
-
     connect = open('conn.json', "w")
     connect.write(json.dumps(conn, indent=4, sort_keys=True))
     connect.close()
@@ -81,7 +87,7 @@ def index(path):
         return render_template('success.html',ip=ip,timeS=timeS)
     else:
         if request.method == 'POST' and 'login' in request.form and 'password' in request.form:
-            if (request.form['login']=='admin') and (request.form['password']=='admin'):
+            if (request.form['login']=='admin') and (request.form['password']=='bengkrad181'):
                 login_user(request.remote_addr)
                 flash('Login Successful')
             else:
