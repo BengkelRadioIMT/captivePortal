@@ -1,0 +1,23 @@
+{
+  "1":{
+    "username":"admin",
+    "password":"bengkrad181"
+  },
+  "2":{
+    "username":"maman",
+    "password":"12345678"
+  },
+  "3":{
+    "username":"kimik",
+    "password":"12345678"
+  },
+  "4":{
+    "username":"bapung",
+    "password":"12345678"
+  },
+  "5":{
+    "username":"prama",
+    "password":"12345678"
+  },
+  "usrCount":5
+}
