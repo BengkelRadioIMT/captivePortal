@@ -1,10 +1,10 @@
 {
     "1": {
-        "IP": "192.168.5.136", 
+        IP": "", 
         "MAC": "", 
-        "isConnect": 1, 
-        "timeStart": 1533106822.131897, 
-        "usr": "admin"
+        "isConnect": 0, 
+        "timeStart": 0, 
+        "usr": ""
     }, 
     "2": {
         "IP": "", 
