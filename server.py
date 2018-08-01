@@ -87,7 +87,7 @@ def index(path):
         return render_template('success.html',ip=ip,timeS=timeS)
     else:
         if request.method == 'POST' and 'login' in request.form and 'password' in request.form:
-            if (request.form['login']=='admin') and (request.form['password']=='bengkrad181'):
+            if (request.form['login']=='admin') and (request.form['password']=='admin'):
                 login_user(request.remote_addr)
                 flash('Login Successful')
             else:
