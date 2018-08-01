@@ -6,6 +6,3 @@ Simple Captive Portal Server built in Python Flask using iptables rules for conf
 
 ## Prerequisites
 In order to run, this script requires Python 2.7 with library flask (http://flask.pocoo.org/)
-
-## Installation
-1. Clone the project using this command : <br />`https://github.com/mamanberliansyah/cptvportal/` <br />
