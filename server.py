@@ -87,9 +87,18 @@ def index(path):
             isFound = 1
     if ((isFound) and  conn[j]['isConnect'] and (conn[j]['IP'] == request.remote_addr)):
         usrname = conn[j]['usr']
-        ip = request.remote_addr
-        timeS = elapsed(conn[j]['timeStart'])
-        return render_template('success.html',ip=ip,timeS=timeS,usrname=usrname)
+        if usrname == 'admin':
+            usrtimes = {}
+            for k in range(0,4):
+                if (conn[str(k+1)]['isConnect']):
+                    usrtimes[k]=elapsed(conn[str(k+1)]['timeStart'])
+                else:
+                    usrtimes[k]=0
+            return render_template('admin.html', conn=conn,usrtimes=usrtimes)
+        else:
+            ip = request.remote_addr
+            timeS = elapsed(conn[j]['timeStart'])
+            return render_template('success.html',ip=ip,timeS=timeS,usrname=usrname)
     else:
         if conn['connCount'] < 4:
             if request.method == 'POST' and 'login' in request.form and 'password' in request.form:

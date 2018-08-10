@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>BengkRad WiFi Auth</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+	  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<link rel="icon" type="image/png" href="favicon.png">
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="#">Bengkrad WiFi Auth</a>
+			</header>
+
+		<!-- Highlights -->
+		<section class="wrapper">
+			<div class="inner">
+				<header class="special">
+					<img src="../static/image/bengkradPNG.png" alt="Logo" height="125" width="125">
+					<br>
+					<br>
+					<h2>ADMIN PAGE</h2>
+					<table class="table table-bordered table-striped" id="user_table">
+						<tr>
+							<th>NO.</th>
+							<th>USERNAME</th>
+							<th>IP ADDRESS</th>
+							<th>TIME</th>
+						</tr>
+						<tr>
+							<th>1</th>
+							<th><label for="usr1" id="USR1"></label></th>
+							<th><label for="ip1" id="IP1"></label></th>
+							<th><label for="time1" id="TIME1"></label></th>
+						</tr>
+						<tr>
+							<th>2</th>
+							<th><label for="usr2" id="USR2"></label></th>
+							<th><label for="ip2" id="IP2"></th>
+							<th><label for="time2" id="TIME2"></label></th>
+						</tr>
+						<tr>
+							<th>3</th>
+							<th><label for="usr3" id="USR3"></label></th>
+							<th><label for="ip3" id="IP3"></th>
+							<th><label for="time3" id="TIME3"></label></th>
+						</tr>
+						<tr>
+							<th>4</th>
+							<th><label for="usr4" id="USR4"></label></th>
+							<th><label for="ip4" id="IP4"></th>
+							<th><label for="time4" id="TIME4"></label></th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<th>ACTIVE USER :</th>
+							<th><label for="connCount" id="USRCOUNT"></label></th>
+						</tr>
+					</table>
+					<div class="col-4 col-12-small">
+						<a href="/logout" class="button">LOGOUT</a>
+					</div>
+					</div>
+				</header>
+		</section>
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/admintable.js') }}"></script>
+			<script>
+					var USR1 = "{{conn['1']['usr']}}";
+					var USR2 = "{{conn['2']['usr']}}";
+					var USR3 = "{{conn['3']['usr']}}";
+					var USR4 = "{{conn['4']['usr']}}";
+
+					var IP1 = "{{conn['1']['IP']}}";
+					var IP2 = "{{conn['2']['IP']}}";
+					var IP3 = "{{conn['3']['IP']}}";
+					var IP4 = "{{conn['4']['IP']}}";
+
+					var TIME1 = "{{usrtimes[0]}}";
+					var TIME2 = "{{usrtimes[1]}}";
+					var TIME3 = "{{usrtimes[2]}}";
+					var TIME4 = "{{usrtimes[3]}}";
+
+					var USRCOUNT = "{{conn['connCount']}}";
+					document.getElementById('USR1').innerHTML = USR1;
+					document.getElementById('USR2').innerHTML = USR2;
+					document.getElementById('USR3').innerHTML = USR3;
+					document.getElementById('USR4').innerHTML = USR4;
+
+					document.getElementById('IP1').innerHTML = IP1;
+					document.getElementById('IP2').innerHTML = IP2;
+					document.getElementById('IP3').innerHTML = IP3;
+					document.getElementById('IP4').innerHTML = IP4;
+
+					document.getElementById('TIME1').innerHTML = TIME1;
+					document.getElementById('TIME2').innerHTML = TIME2;
+					document.getElementById('TIME3').innerHTML = TIME3;
+					document.getElementById('TIME4').innerHTML = TIME4;
+
+					document.getElementById('USRCOUNT').innerHTML = USRCOUNT;
+			</script>
+	</body>
+</html>
