@@ -5,5 +5,4 @@ Simple Captive Portal Server built in Python Flask using iptables rules for conf
 </p>
 
 ## Prerequisites
-In order to run, this script requires Python 2.7 with library flask (http://flask.pocoo.org/)
-
+In order to run, this script requires Python 2.7 & Flask Microframework (http://flask.pocoo.org/)
